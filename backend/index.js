@@ -38,12 +38,14 @@ const Reminder = new mongoose.model("reminder", reminderSchema);
 const accountSid = process.env.ACCOUNT_SID;
 const authToken = process.env.AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+const toNumber = `whatsapp:${process.env.PHONE_NO}`;
+const fromNumber = `whatsapp:${process.env.FROM_NO}`;
 const sendMsg = async (msg) => {
     client.messages
     .create({
        body: msg,
-       from: 'whatsapp:+14155238886',
-       to: 'whatsapp:+918777429224'
+       from: fromNumber,
+       to: toNumber
      })
     .then(message => console.log(message.sid));
 }
