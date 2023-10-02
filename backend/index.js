@@ -70,31 +70,7 @@ setInterval(async ()=>{
         }
     });
 },5000);
-// setInterval(()=>{
-//     console.log("Hello")
-//     // const reminderList = Reminder.find({});
-//     // reminderList = JSON.parse(reminderList);
-//     // reminderList.forEach(reminder=>{
-//     //     if(!reminder.isReminded){
-//     //         const now = new Date();
-//     //         if(new Date(reminder.remindAt)-now<0){
-//     //             reminder.findByIdAndUpdate(reminder._id, {isReminded:true});
-//     //             console.log("Reminder Done");
-//     //         }
-//     //     }
-//     // })
 
-
-// },10000)
-
-
-    // client.messages
-    // .create({
-    //    body: 'Hello there!',
-    //    from: 'whatsapp:+14155238886',
-    //    to: 'whatsapp:+918777429224'
-    //  })
-    // .then(message => console.log(message.sid));
 
 
 // API Routes
@@ -125,9 +101,6 @@ app.post('/deleteReminder', async (req,res)=> {
     Reminder.find({});
 })
 
-// app.get("/", (req,res)=> {
-//     res.send("A Message from BE");
-// })
 
 
 app.listen(port, ()=>{
